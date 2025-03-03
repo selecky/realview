@@ -2,6 +2,8 @@
 class Strings {
   static String app_title = 'app_title';
 
+  static String apiBaseUrl = 'https://api.itbook.store/1.0/search/mongodb';
+
   // errors
   static String error = 'error';
   static String try_again = 'try_again';

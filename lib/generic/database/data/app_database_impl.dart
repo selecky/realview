@@ -1,11 +1,8 @@
-import 'package:realview/generic/database/data/app_database.dart';
-import 'package:realview/generic/database/data/order_history_database.dart';
-import 'package:realview/generic/database/data/settings_database.dart';
-import 'package:realview/generic/database/data/srv_zprava_database.dart';
 import 'package:hive/hive.dart';
+import 'package:realview/generic/database/data/app_database.dart';
+import 'package:realview/generic/database/data/settings_database.dart';
 
-class AppDatabaseImpl
-    implements AppDatabase, SettingsDatabase, SrvZpravaDatabase, OrderHistoryDatabase {
+class AppDatabaseImpl implements AppDatabase, SettingsDatabase {
   AppDatabaseImpl({required String databaseName}) : _hiveBox = Hive.openBox<String?>(databaseName);
 
   final Future<Box<String?>> _hiveBox;

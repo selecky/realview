@@ -1,4 +1,7 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:realview/architecture/app.dart';
+import 'package:realview/features/dark_mode/presentation/blocs/dark_mode_bloc.dart';
 import 'package:realview/main_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
@@ -22,7 +25,14 @@ Future<void> main() async {
         supportedLocales: const [Locale('de'), Locale('en')],
         path: 'assets/translations',
         fallbackLocale: const Locale('de'),
-        child: const MainWidget(),
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider<DarkModeBloc>.value(
+              value: GetIt.I.get<DarkModeBloc>()..add(const InitDarkModeEvent()),
+            ),
+          ],
+          child: const MainWidget(),
+        ),
       ),
     ),
   );

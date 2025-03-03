@@ -10,6 +10,11 @@ class MainWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return BlocBuilder<DarkModeBloc, DarkModeState>(
       builder: (context, state) {
         final bool isDarkMode = state is DarkModeStateSuccess && state.isDark;

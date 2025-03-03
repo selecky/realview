@@ -1,14 +1,6 @@
 import 'dart:async';
 import 'dart:collection';
-import 'dart:convert';
 
-import 'package:realview/architecture/utils/app_module.dart';
-import 'package:realview/features/dark_mode/dark_mode_module.dart';
-import 'package:realview/features/home/home_module.dart';
-import 'package:realview/generic/constants.dart';
-import 'package:realview/generic/functions.dart';
-import 'package:realview/generic/strings.dart';
-import 'package:realview/main.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +8,11 @@ import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart';
+import 'package:realview/architecture/utils/app_module.dart';
+import 'package:realview/features/dark_mode/dark_mode_module.dart';
+import 'package:realview/features/home/home_module.dart';
+import 'package:realview/features/shell/shell_module.dart';
+import 'package:realview/generic/constants.dart';
 import 'package:requests_inspector/requests_inspector.dart';
 
 part 'app_dio.dart';
@@ -42,7 +39,7 @@ class App {
 
   final Dio Function({required String endpoint}) getDio = _getDio;
 
-  final List<AppModule> _modules = [DarkModeModule(), HomeModule()];
+  final List<AppModule> _modules = [DarkModeModule(), HomeModule(), ShellModule()];
 
   Future<void> init() async {
     _configureLogger();

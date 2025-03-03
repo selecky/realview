@@ -1,16 +1,11 @@
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:realview/features/dark_mode/domain/repo/dark_mode_repo.dart';
 import 'package:realview/features/dark_mode/presentation/blocs/dark_mode_bloc.dart';
 
-
 import 'dark_mode_bloc_test.mocks.dart';
 
-@GenerateNiceMocks([
-  MockSpec<DarkModeRepo>(),
-])
-
+@GenerateNiceMocks([MockSpec<DarkModeRepo>()])
 void main() {
   late MockDarkModeRepo repo;
   late DarkModeBloc bloc;

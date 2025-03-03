@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logging/logging.dart';
@@ -9,9 +8,7 @@ import 'package:realview/generic/constants.dart';
 final _log = Logger('dark_mode_switch');
 
 class DarkModeSwitch extends StatelessWidget {
-  const DarkModeSwitch({
-    super.key,
-  });
+  const DarkModeSwitch({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +30,7 @@ class DarkModeSwitch extends StatelessWidget {
             builder: (context, state) {
               return Icon(
                 App.isDarkMode ? Icons.light_mode : Icons.dark_mode,
-                color: App.appTheme.app_textColorWhite,
+                color: App.appTheme.app_textColor,
                 size: 32,
               );
             },

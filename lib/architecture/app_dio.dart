@@ -1,0 +1,19 @@
+part of 'app.dart';
+
+Dio _getDio({required String endpoint}) {
+  final Dio dio = Dio(
+    BaseOptions(
+      baseUrl: endpoint,
+      connectTimeout: const Duration(seconds: 30),
+      receiveTimeout: const Duration(seconds: 30),
+      sendTimeout: const Duration(seconds: 30),
+    ),
+  );
+
+  dio.options.headers['Api-Key'] = 'xxxxxxxxxxxxxxxxxxxxx';
+
+  if (!kIsWeb) {
+    dio.interceptors.add(RequestsInspectorInterceptor());
+  }
+  return dio;
+}

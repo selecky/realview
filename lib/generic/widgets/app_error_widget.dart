@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:realview/architecture/app.dart';
 import 'package:realview/generic/constants.dart';
 import 'package:realview/generic/strings.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 
 class AppErrorWidget extends StatelessWidget {
   const AppErrorWidget({

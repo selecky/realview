@@ -12,7 +12,7 @@ class ShellModule extends AppModule {
   void registerBloc() {}
 
   @override
-  void registerDI() {
+  void registerScreenProviders() {
     GetIt.I.registerFactoryParam<Widget, GoRouterState, Widget>(
       (goRouterState, shellChild) => MultiBlocProvider(
         providers: [BlocProvider<DarkModeBloc>.value(value: GetIt.I.get<DarkModeBloc>())],

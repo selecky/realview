@@ -2,7 +2,8 @@
 class ScreenNames {
   static const String shell = 'shell';
   static const String home = 'home';
-  static const String detail = 'detail';
+  static const String books = 'books';
+  static const String bookDetail = 'book_detail';
 }
 
 class DatabaseNames {

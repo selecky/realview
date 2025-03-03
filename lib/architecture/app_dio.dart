@@ -10,7 +10,8 @@ Dio _getDio({required String endpoint}) {
     ),
   );
 
-  dio.options.headers['Api-Key'] = 'xxxxxxxxxxxxxxxxxxxxx';
+  // dio.options.headers['Api-Key'] = '';
+  dio.options.baseUrl = Strings.apiBaseUrl;
 
   if (!kIsWeb) {
     dio.interceptors.add(RequestsInspectorInterceptor());

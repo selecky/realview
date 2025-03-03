@@ -5,9 +5,7 @@ import 'package:realview/architecture/app.dart';
 import 'package:realview/features/dark_mode/presentation/blocs/dark_mode_bloc.dart';
 
 class AppLogo extends StatelessWidget {
-  const AppLogo({
-    super.key,
-  });
+  const AppLogo({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:realview/architecture/app.dart';
+import 'package:realview/features/home/presentation/blocs/home_bloc.dart';
+import 'package:realview/generic/strings.dart';
+import 'package:realview/generic/widgets/app_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +16,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const Center(child: Text('Screen A')));
+    return AppScreen(
+      title: Strings.screen_title_home.tr(),
+      child: InkWell(
+        onTap: () {
+          context.read<HomeBloc>().add(GoToBooksScreenEvent(context: context));
+        },
+        child: Icon(Icons.menu_book_sharp, size: 80, color: Theme.of(context).app_textColor),
+      ),
+    );
   }
 }

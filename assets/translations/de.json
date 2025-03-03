@@ -1,3 +1,10 @@
 {
-  "app_title": "Realview"
+  "app_title": "Realview",
+
+  "screen_title_home": "Menu",
+  "screen_title_books": "Bücher",
+  "screen_title_book_detail": "Buchdetails",
+
+  "error__get_books": "Bücher konnten nicht geladen werden.",
+  "error__get_book_detail": "Das Buch konnte nicht geladen werden."
 }

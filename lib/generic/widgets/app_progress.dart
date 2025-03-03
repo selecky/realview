@@ -1,5 +1,5 @@
-import 'package:realview/architecture/app.dart';
 import 'package:flutter/material.dart';
+import 'package:realview/architecture/app.dart';
 
 class AppProgress extends StatelessWidget {
   const AppProgress({super.key, this.color});

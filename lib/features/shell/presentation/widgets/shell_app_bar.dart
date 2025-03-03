@@ -7,10 +7,7 @@ class ShellAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: AppLogo(),
-      actions: [DarkModeSwitch()],
-    );
+    return AppBar(title: const AppLogo(), actions: const [DarkModeSwitch()]);
   }
 
   @override

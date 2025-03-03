@@ -5,7 +5,7 @@ abstract class AppModule {
   void registerBloc();
   void registerScreen();
   void registerNavigation();
-  void registerDI();
+  void registerScreenProviders();
 
   void registerDependencies() {
     registerDataSource();
@@ -14,6 +14,6 @@ abstract class AppModule {
     registerUseCase();
     registerBloc();
     registerScreen();
-    registerDI();
+    registerScreenProviders();
   }
 }

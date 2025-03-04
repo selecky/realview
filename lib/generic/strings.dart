@@ -8,6 +8,9 @@ class Strings {
   static String screen_title_books = 'screen_title_books';
   static String screen_title_book_detail = 'screen_title_book_detail';
 
+  //books screen
+  static String books_empty = 'books_empty';
+
   // errors
   static String error = 'error';
   static String try_again = 'try_again';

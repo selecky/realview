@@ -16,13 +16,12 @@ BooksDataDto _$BooksDataDtoFromJson(Map<String, dynamic> json) => BooksDataDto(
           .toList(),
 );
 
-Map<String, dynamic> _$BooksDataDtoToJson(BooksDataDto instance) =>
-    <String, dynamic>{
-      'error': instance.error,
-      'total': instance.total,
-      'page': instance.page,
-      'books': instance.books?.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$BooksDataDtoToJson(BooksDataDto instance) => <String, dynamic>{
+  'error': instance.error,
+  'total': instance.total,
+  'page': instance.page,
+  'books': instance.books?.map((e) => e.toJson()).toList(),
+};
 
 BookDto _$BookDtoFromJson(Map<String, dynamic> json) => BookDto(
   title: json['title'] as String?,

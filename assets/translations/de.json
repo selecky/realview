@@ -5,6 +5,8 @@
   "screen_title_books": "Bücher",
   "screen_title_book_detail": "Buchdetails",
 
+  "books_empty": "Keine Bücher gefunden.",
+
   "error__get_books": "Bücher konnten nicht geladen werden.",
   "error__get_book_detail": "Das Buch konnte nicht geladen werden."
 }

@@ -10,14 +10,13 @@ class AppScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(title.toUpperCase(), style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 8),
             const Divider(),
-            const SizedBox(height: 8),
             child,
           ],
         ),

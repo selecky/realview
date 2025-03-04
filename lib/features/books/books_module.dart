@@ -20,8 +20,11 @@ import 'package:realview/generic/strings.dart';
 class BooksModule extends AppModule {
   @override
   void registerBloc() {
-    GetIt.I.registerFactory<BooksBloc>(
-      () => BooksBloc(getBooksUseCase: GetIt.I.get<GetBooksUseCase>()),
+    GetIt.I.registerLazySingleton<BooksBloc>(
+      () => BooksBloc(
+        getBooksUseCase: GetIt.I.get<GetBooksUseCase>(),
+        navigation: GetIt.I.get<BooksNavigation>(),
+      ),
     );
     GetIt.I.registerFactory<BookDetailBloc>(
       () => BookDetailBloc(getBookDetailUseCase: GetIt.I.get<GetBookDetailUseCase>()),
@@ -32,7 +35,10 @@ class BooksModule extends AppModule {
   void registerScreenProviders() {
     GetIt.I.registerFactoryParam<Widget, GoRouterState, BuildContext>(
       (goRouterState, context) => MultiBlocProvider(
-        providers: [BlocProvider<BooksBloc>.value(value: GetIt.I.get<BooksBloc>())],
+        providers: [
+          BlocProvider<BooksBloc>.value(value: GetIt.I.get<BooksBloc>()),
+          BlocProvider<BookDetailBloc>.value(value: GetIt.I.get<BookDetailBloc>()),
+        ],
         child: GetIt.I.get<BooksScreen>(param1: goRouterState, param2: context),
       ),
       instanceName: ScreenNames.books,
@@ -68,7 +74,7 @@ class BooksModule extends AppModule {
       (goRouterState, context) => const BooksScreen(),
     );
     GetIt.I.registerFactoryParam<BookDetailScreen, GoRouterState, BuildContext>(
-      (goRouterState, context) => const BookDetailScreen(),
+      (goRouterState, context) => BookDetailScreen(isbn13: goRouterState.pathParameters['isbn13']!),
     );
   }
 

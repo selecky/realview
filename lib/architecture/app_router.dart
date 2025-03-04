@@ -26,7 +26,7 @@ final _appRouter = GoRouter(
               ),
           routes: [
             GoRoute(
-              path: 'books',
+              path: ScreenNames.books,
               name: ScreenNames.books,
               builder:
                   (context, state) => GetIt.I.get<Widget>(
@@ -36,7 +36,7 @@ final _appRouter = GoRouter(
                   ),
               routes: [
                 GoRoute(
-                  path: 'book_detail',
+                  path: '${ScreenNames.bookDetail}/:isbn13',
                   name: ScreenNames.bookDetail,
                   builder:
                       (context, state) => GetIt.I.get<Widget>(

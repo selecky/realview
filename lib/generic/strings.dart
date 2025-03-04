@@ -17,7 +17,6 @@ class Strings {
   static String error__network = 'error__network';
   static String error__network_info = 'error__network_info';
   static String error__field_empty = 'error__field_empty';
-
-  static String error__getBooks = 'errors__getBooks';
-  static String error__getBookDetail = 'error__getBookDetail';
+  static String error__get_books = 'error__get_books';
+  static String error__get_book_detail = 'error__get_book_detail';
 }

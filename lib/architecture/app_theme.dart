@@ -89,6 +89,7 @@ ThemeData _getAppTheme() {
 extension CustomTextStyles on TextTheme {
   TextStyle get app_bodyMediumBlack => bodyMedium!.copyWith(color: App.appTheme.app_textColorBlack);
   TextStyle get app_bodyMediumWhite => bodyMedium!.copyWith(color: App.appTheme.app_textColorWhite);
+  TextStyle get app_bodyMediumGrey => bodyMedium!.copyWith(color: App.appTheme.app_textColorGrey);
 }
 
 // custom colors
@@ -105,13 +106,15 @@ extension CustomColors on ThemeData {
 
   Color get app_dividerColor => App.isDarkMode ? Colors.grey[700]! : const Color(0xFFD9D9D9);
 
-  Color get app_primaryColor => Colors.yellow;
+  Color get app_primaryColor => App.isDarkMode ? Colors.black54 : Colors.yellow;
 
   Color get app_textColor => App.isDarkMode ? app_textColorWhite : app_textColorBlack;
 
   Color get app_textColorBlack => Colors.black;
 
   Color get app_textColorWhite => Colors.white;
+
+  Color get app_textColorGrey => App.isDarkMode ? Colors.grey[500]! : Colors.grey[600]!;
 
   Color get app_tileColor => App.isDarkMode ? const Color(0xFF585858) : Colors.grey[200]!;
 }

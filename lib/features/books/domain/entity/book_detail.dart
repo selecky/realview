@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class BookDetail extends Equatable {
-  final int? error;
+  final String? error;
   final String? title;
   final String? subtitle;
   final String? authors;
@@ -9,9 +9,9 @@ class BookDetail extends Equatable {
   final String? language;
   final String? isbn10;
   final String? isbn13;
-  final int? pages;
-  final int? year;
-  final int? rating;
+  final String? pages;
+  final String? year;
+  final String? rating;
   final String? desc;
   final String? price;
   final String? image;

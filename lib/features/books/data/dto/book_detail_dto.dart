@@ -5,7 +5,7 @@ part 'book_detail_dto.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class BookDetailDto extends Equatable {
-  final int? error;
+  final String? error;
   final String? title;
   final String? subtitle;
   final String? authors;
@@ -13,9 +13,9 @@ class BookDetailDto extends Equatable {
   final String? language;
   final String? isbn10;
   final String? isbn13;
-  final int? pages;
-  final int? year;
-  final int? rating;
+  final String? pages;
+  final String? year;
+  final String? rating;
   final String? desc;
   final String? price;
   final String? image;

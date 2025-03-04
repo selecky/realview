@@ -28,7 +28,7 @@ class BookDetailBloc extends Bloc<BookDetailEvent, BookDetailState> {
       case final NetworkResultSuccess<BookDetail> success:
         emit(BookDetailStateSuccess(isLoading: false, bookDetail: success.data));
       case NetworkResultFailure<BookDetail>():
-        emit(BookDetailStateError(errorMessage: Strings.error__getBookDetail.tr()));
+        emit(BookDetailStateError(errorMessage: Strings.error__get_book_detail.tr()));
     }
   }
 }

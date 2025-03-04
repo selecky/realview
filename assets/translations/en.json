@@ -8,5 +8,10 @@
   "books_empty": "No books were found.",
 
   "error__get_books": "Failed to load books.",
-  "error__get_book_detail": "Failed to load book details."
+  "error__get_book_detail": "Failed to load book details.",
+  "error": "Error",
+  "try_again": "Try again",
+  "error__network": "Network error",
+  "error__network_info": "No internet connection",
+  "error__field_empty": "This field cannot be empty"
 }

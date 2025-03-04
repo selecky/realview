@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realview/architecture/app.dart';
+import 'package:realview/features/dark_mode/presentation/blocs/dark_mode_bloc.dart';
 import 'package:realview/generic/constants.dart';
 import 'package:realview/generic/strings.dart';
 
@@ -34,7 +36,7 @@ class AppErrorWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                isConnectionError ? Strings.error__network.tr() : title ?? Strings.error,
+                isConnectionError ? Strings.error__network.tr() : title ?? Strings.error.tr(),
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               if (isConnectionError || subtitle != null)
@@ -61,26 +63,29 @@ class _RefreshButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 16),
-      child: InkWell(
-        onTap: onTryAgain,
-        child: Container(
-          decoration: BoxDecoration(
-            color: App.appTheme.primaryColor,
-            borderRadius: BorderRadius.circular(40),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: Text(
-              Strings.try_again.tr().toUpperCase(),
-              style: Theme.of(
-                context,
-              ).textTheme.labelLarge!.copyWith(color: App.appTheme.app_textColorWhite),
+    return BlocBuilder<DarkModeBloc, DarkModeState>(
+      builder: (context, state) {
+        return Padding(
+          padding: const EdgeInsets.only(top: 16),
+          child: InkWell(
+            splashColor: App.appTheme.dividerColor,
+            onTap: onTryAgain,
+            child: Container(
+              decoration: BoxDecoration(
+                color: App.appTheme.primaryColor,
+                borderRadius: BorderRadius.circular(40),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: Text(
+                  Strings.try_again.tr().toUpperCase(),
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+              ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

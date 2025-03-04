@@ -7,7 +7,7 @@ part of 'book_detail_dto.dart';
 // **************************************************************************
 
 BookDetailDto _$BookDetailDtoFromJson(Map<String, dynamic> json) => BookDetailDto(
-  error: (json['error'] as num?)?.toInt(),
+  error: json['error'] as String?,
   title: json['title'] as String?,
   subtitle: json['subtitle'] as String?,
   authors: json['authors'] as String?,
@@ -15,9 +15,9 @@ BookDetailDto _$BookDetailDtoFromJson(Map<String, dynamic> json) => BookDetailDt
   language: json['language'] as String?,
   isbn10: json['isbn10'] as String?,
   isbn13: json['isbn13'] as String?,
-  pages: (json['pages'] as num?)?.toInt(),
-  year: (json['year'] as num?)?.toInt(),
-  rating: (json['rating'] as num?)?.toInt(),
+  pages: json['pages'] as String?,
+  year: json['year'] as String?,
+  rating: json['rating'] as String?,
   desc: json['desc'] as String?,
   price: json['price'] as String?,
   image: json['image'] as String?,

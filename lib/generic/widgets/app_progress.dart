@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:realview/architecture/app.dart';
 
 class AppProgress extends StatelessWidget {
   const AppProgress({super.key, this.color});
@@ -8,6 +7,6 @@ class AppProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: CircularProgressIndicator(color: color ?? App.appTheme.primaryColor));
+    return Center(child: CircularProgressIndicator(color: color ?? Colors.yellow));
   }
 }

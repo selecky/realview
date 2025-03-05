@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return AppScreen(
       title: Strings.screen_title_home.tr(),
+      hasBackButton: false,
       child: InkWell(
         onTap: () {
           context.read<HomeBloc>().add(GoToBooksScreenEvent(context: context));

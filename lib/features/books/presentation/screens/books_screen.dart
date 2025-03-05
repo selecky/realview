@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:realview/features/books/domain/entity/books_data.dart';
 import 'package:realview/features/books/presentation/blocs/books_bloc/books_bloc.dart';
 import 'package:realview/features/books/presentation/widgets/books_screen/books_tile_content.dart';
@@ -9,6 +10,8 @@ import 'package:realview/generic/widgets/app_error_widget.dart';
 import 'package:realview/generic/widgets/app_list_tile.dart';
 import 'package:realview/generic/widgets/app_progress.dart';
 import 'package:realview/generic/widgets/app_screen.dart';
+
+final _log = Logger('books_screen');
 
 class BooksScreen extends StatefulWidget {
   const BooksScreen({super.key});
@@ -52,6 +55,7 @@ class _BooksScreenState extends State<BooksScreen> {
                               GoToBookDetailScreenEvent(context: context, isbn13: book.isbn13!),
                             );
                           }
+                          _log.info('book tile tapped');
                         },
                         content: BooksTileContent(book: book, index: index),
                       );

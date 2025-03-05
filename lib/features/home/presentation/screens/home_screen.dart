@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logging/logging.dart';
-import 'package:realview/architecture/app.dart';
 import 'package:realview/features/home/presentation/blocs/home_bloc.dart';
+import 'package:realview/features/home/presentation/widgets/home_tile.dart';
 import 'package:realview/generic/strings.dart';
 import 'package:realview/generic/widgets/app_screen.dart';
 
@@ -22,12 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return AppScreen(
       title: Strings.screen_title_home.tr(),
       hasBackButton: false,
-      child: InkWell(
+      child: HomeTile(
         onTap: () {
           context.read<HomeBloc>().add(GoToBooksScreenEvent(context: context));
           _log.info('book icon tapped');
         },
-        child: Icon(Icons.menu_book_sharp, size: 80, color: Theme.of(context).app_textColor),
+      iconData: Icons.menu_book_sharp,
+        title: Strings.screen_title_books.tr(),
       ),
     );
   }

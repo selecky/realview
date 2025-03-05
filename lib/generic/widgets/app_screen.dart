@@ -28,7 +28,7 @@ class AppScreen extends StatelessWidget {
                       context.pop();
                       _log.info('back button tapped');
                     },
-                    child: Icon(Icons.arrow_back_ios, color: Theme.of(context).app_textColor,),
+                    child: Icon(Icons.arrow_back_ios, color: Theme.of(context).app_textColor),
                   ),
                 Text(title.toUpperCase(), style: Theme.of(context).textTheme.titleLarge),
               ],

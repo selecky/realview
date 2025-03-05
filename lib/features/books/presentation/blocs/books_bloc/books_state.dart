@@ -4,14 +4,20 @@ sealed class BooksState extends Equatable {
   const BooksState();
 }
 
-class BooksStateSuccess extends BooksState {
-  final bool isLoading;
-  final BooksData? booksData;
-
-  const BooksStateSuccess({required this.isLoading, required this.booksData});
+class BooksStateLoading extends BooksState {
+  const BooksStateLoading();
 
   @override
-  List<Object?> get props => [isLoading, booksData];
+  List<Object> get props => [];
+}
+
+class BooksStateSuccess extends BooksState {
+  final BooksData? booksData;
+
+  const BooksStateSuccess({required this.booksData});
+
+  @override
+  List<Object?> get props => [booksData];
 }
 
 class BooksStateError extends BooksState {

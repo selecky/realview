@@ -31,10 +31,10 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
       child: BlocBuilder<BookDetailBloc, BookDetailState>(
         builder: (context, state) {
           switch (state) {
+            case BookDetailStateLoading():
+              return const Expanded(child: AppProgress());
             case final BookDetailStateSuccess stateSuccess:
-              if (stateSuccess.isLoading) {
-                return const Expanded(child: AppProgress());
-              } else if (stateSuccess.bookDetail == null) {
+              if (stateSuccess.bookDetail == null) {
                 return const BookDetailErrorWidget();
               } else {
                 final BookDetail bookDetail = stateSuccess.bookDetail!;

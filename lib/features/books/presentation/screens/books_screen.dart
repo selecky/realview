@@ -34,10 +34,10 @@ class _BooksScreenState extends State<BooksScreen> {
       child: BlocBuilder<BooksBloc, BooksState>(
         builder: (context, state) {
           switch (state) {
+            case BooksStateLoading():
+              return const Expanded(child: AppProgress());
             case final BooksStateSuccess stateSuccess:
-              if (stateSuccess.isLoading) {
-                return const Expanded(child: AppProgress());
-              } else if (stateSuccess.booksData?.books?.isEmpty ?? true) {
+              if (stateSuccess.booksData?.books?.isEmpty ?? true) {
                 return Center(
                   child: Text(Strings.books_empty, style: Theme.of(context).textTheme.titleMedium),
                 );

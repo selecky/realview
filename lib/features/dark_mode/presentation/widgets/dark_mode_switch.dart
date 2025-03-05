@@ -26,14 +26,10 @@ class DarkModeSwitch extends StatelessWidget {
         },
         child: Padding(
           padding: const EdgeInsets.all(8),
-          child: BlocBuilder<DarkModeBloc, DarkModeState>(
-            builder: (context, state) {
-              return Icon(
-                App.isDarkMode ? Icons.light_mode : Icons.dark_mode,
-                color: App.appTheme.app_textColor,
-                size: 32,
-              );
-            },
+          child: Icon(
+            App.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+            color: Theme.of(context).app_textColor,
+            size: 32,
           ),
         ),
       ),

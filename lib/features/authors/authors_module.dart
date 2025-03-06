@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:go_router/go_router.dart';
+import 'package:realview/architecture/app.dart';
+import 'package:realview/architecture/utils/app_module.dart';
+import 'package:realview/features/authors/data/data_source/authors_api.dart';
+import 'package:realview/features/authors/data/repo_impl/authors_repo_impl.dart';
+import 'package:realview/features/authors/domain/repo/authors_repo.dart';
+import 'package:realview/features/authors/domain/use_case/get_author_detail_use_case.dart';
+import 'package:realview/features/authors/domain/use_case/get_authors_use_case.dart';
+import 'package:realview/features/authors/presentation/blocs/author_detail_bloc/author_detail_bloc.dart';
+import 'package:realview/features/authors/presentation/blocs/authors_bloc/authors_bloc.dart';
+import 'package:realview/features/authors/presentation/navigation/authors_navigation.dart';
+import 'package:realview/features/authors/presentation/screens/author_detail_screen.dart';
+import 'package:realview/features/authors/presentation/screens/authors_screen.dart';
+import 'package:realview/generic/constants.dart';
+import 'package:realview/generic/strings.dart';
+
+class AuthorsModule extends AppModule {
+  @override
+  void registerBloc() {
+    GetIt.I.registerLazySingleton<AuthorsBloc>(
+      () => AuthorsBloc(
+        getAuthorsUseCase: GetIt.I.get<GetAuthorsUseCase>(),
+        navigation: GetIt.I.get<AuthorsNavigation>(),
+      ),
+    );
+    GetIt.I.registerFactory<AuthorDetailBloc>(
+      () => AuthorDetailBloc(getAuthorDetailUseCase: GetIt.I.get<GetAuthorDetailUseCase>()),
+    );
+  }
+
+  @override
+  void registerScreenProviders() {
+    GetIt.I.registerFactoryParam<Widget, GoRouterState, BuildContext>(
+      (goRouterState, context) => MultiBlocProvider(
+        providers: [
+          BlocProvider<AuthorsBloc>.value(value: GetIt.I.get<AuthorsBloc>()),
+          BlocProvider<AuthorDetailBloc>.value(value: GetIt.I.get<AuthorDetailBloc>()),
+        ],
+        child: GetIt.I.get<AuthorsScreen>(param1: goRouterState, param2: context),
+      ),
+      instanceName: ScreenNames.authors,
+    );
+
+    GetIt.I.registerFactoryParam<Widget, GoRouterState, BuildContext>(
+      (goRouterState, context) => MultiBlocProvider(
+        providers: [BlocProvider<AuthorDetailBloc>.value(value: GetIt.I.get<AuthorDetailBloc>())],
+        child: GetIt.I.get<AuthorDetailScreen>(param1: goRouterState, param2: context),
+      ),
+      instanceName: ScreenNames.authorDetail,
+    );
+  }
+
+  @override
+  void registerDataSource() {
+    GetIt.I.registerFactory<AuthorsApi>(() => AuthorsApi(App.getDio(endpoint: Strings.apiBaseUrl)));
+  }
+
+  @override
+  void registerNavigation() {
+    GetIt.I.registerFactory<AuthorsNavigation>(() => const AuthorsNavigation());
+  }
+
+  @override
+  void registerRepo() {
+    GetIt.I.registerFactory<AuthorsRepo>(() => AuthorsRepoImpl(api: GetIt.I.get<AuthorsApi>()));
+  }
+
+  @override
+  void registerScreen() {
+    GetIt.I.registerFactoryParam<AuthorsScreen, GoRouterState, BuildContext>(
+      (goRouterState, context) => const AuthorsScreen(),
+    );
+    GetIt.I.registerFactoryParam<AuthorDetailScreen, GoRouterState, BuildContext>(
+      (goRouterState, context) =>
+          AuthorDetailScreen(isbn13: goRouterState.pathParameters['isbn13']!),
+    );
+  }
+
+  @override
+  void registerUseCase() {
+    GetIt.I.registerFactory<GetAuthorsUseCase>(
+      () => GetAuthorsUseCase(repo: GetIt.I.get<AuthorsRepo>()),
+    );
+
+    GetIt.I.registerFactory<GetAuthorDetailUseCase>(
+      () => GetAuthorDetailUseCase(repo: GetIt.I.get<AuthorsRepo>()),
+    );
+  }
+}

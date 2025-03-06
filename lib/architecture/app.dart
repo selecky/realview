@@ -9,7 +9,7 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart';
 import 'package:realview/architecture/utils/app_module.dart';
-import 'package:realview/features/books/books_module.dart';
+import 'package:realview/features/authors/authors_module.dart';
 import 'package:realview/features/dark_mode/dark_mode_module.dart';
 import 'package:realview/features/home/home_module.dart';
 import 'package:realview/features/shell/shell_module.dart';
@@ -40,7 +40,7 @@ class App {
 
   static const Dio Function({required String endpoint}) getDio = _getDio;
 
-  final List<AppModule> _modules = [BooksModule(), DarkModeModule(), HomeModule(), ShellModule()];
+  final List<AppModule> _modules = [AuthorsModule(), DarkModeModule(), HomeModule(), ShellModule()];
 
   Future<void> init() async {
     _configureLogger();

@@ -4,8 +4,8 @@ abstract class HomeEvent extends Equatable {
   const HomeEvent();
 }
 
-class GoToBooksScreenEvent extends HomeEvent {
-  const GoToBooksScreenEvent({required this.context});
+class GoToAuthorsScreenEvent extends HomeEvent {
+  const GoToAuthorsScreenEvent({required this.context});
 
   final BuildContext context;
 

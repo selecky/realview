@@ -24,11 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
       hasBackButton: false,
       child: HomeTile(
         onTap: () {
-          context.read<HomeBloc>().add(GoToBooksScreenEvent(context: context));
-          _log.info('book icon tapped');
+          context.read<HomeBloc>().add(GoToAuthorsScreenEvent(context: context));
+          _log.info('authors icon tapped');
         },
         iconData: Icons.menu_book_sharp,
-        title: Strings.screen_title_books.tr(),
+        title: Strings.screen_title_authors.tr(),
       ),
     );
   }

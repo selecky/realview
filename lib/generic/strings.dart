@@ -5,11 +5,11 @@ class Strings {
 
   // screen titles
   static String screen_title_home = 'screen_title_home';
-  static String screen_title_books = 'screen_title_books';
-  static String screen_title_book_detail = 'screen_title_book_detail';
+  static String screen_title_authors = 'screen_title_authors';
+  static String screen_title_author_detail = 'screen_title_author_detail';
 
-  //books screen
-  static String books_empty = 'books_empty';
+  //authors screen
+  static String authors_empty = 'authors_empty';
 
   // errors
   static String error = 'error';
@@ -17,6 +17,6 @@ class Strings {
   static String error__network = 'error__network';
   static String error__network_info = 'error__network_info';
   static String error__field_empty = 'error__field_empty';
-  static String error__get_books = 'error__get_books';
-  static String error__get_book_detail = 'error__get_book_detail';
+  static String error__get_authors = 'error__get_authors';
+  static String error__get_author_detail = 'error__get_author_detail';
 }

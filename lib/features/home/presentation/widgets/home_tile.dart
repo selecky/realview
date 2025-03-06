@@ -12,11 +12,14 @@ class HomeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Column(
-        children: [
-          Icon(iconData, size: 80, color: Theme.of(context).app_textColor),
-          Text(title, style: Theme.of(context).textTheme.labelLarge),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: [
+            Icon(iconData, size: 80, color: Theme.of(context).app_textColor),
+            Text(title, style: Theme.of(context).textTheme.labelLarge),
+          ],
+        ),
       ),
     );
   }

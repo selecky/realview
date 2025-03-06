@@ -2,13 +2,13 @@
   "app_title": "Realview",
 
   "screen_title_home": "Menu",
-  "screen_title_books": "Bücher",
-  "screen_title_book_detail": "Buchdetails",
+  "screen_title_authors": "Buchautoren",
+  "screen_title_author_detail": "Autorendetails",
 
-  "books_empty": "Keine Bücher gefunden.",
+  "authors_empty": "Keine Bücher gefunden.",
 
-  "error__get_books": "Bücher konnten nicht geladen werden.",
-  "error__get_book_detail": "Das Buch konnte nicht geladen werden.",
+  "error__get_authors": "Bücher konnten nicht geladen werden.",
+  "error__get_author_detail": "Das Buch konnte nicht geladen werden.",
   "error": "Fehler",
   "try_again": "Versuche es erneut",
   "error__network": "Netzwerkfehler",

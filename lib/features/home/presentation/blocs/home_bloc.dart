@@ -12,10 +12,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final HomeNavigation navigation;
 
   HomeBloc({required this.navigation}) : super(HomeStateSuccess()) {
-    on<GoToBooksScreenEvent>(_onGoToBooksScreenEvent);
+    on<GoToAuthorsScreenEvent>(_onGoToAuthorsScreenEvent);
   }
 
-  Future<void> _onGoToBooksScreenEvent(GoToBooksScreenEvent event, Emitter<HomeState> emit) async {
-    await navigation.goToBooksScreen(context: event.context);
+  Future<void> _onGoToAuthorsScreenEvent(
+    GoToAuthorsScreenEvent event,
+    Emitter<HomeState> emit,
+  ) async {
+    await navigation.goToAuthorsScreen(context: event.context);
   }
 }

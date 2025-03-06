@@ -5,7 +5,7 @@ import 'package:realview/generic/constants.dart';
 class HomeNavigation {
   const HomeNavigation();
 
-  Future<void> goToBooksScreen({required BuildContext context}) async {
-    context.go('/${ScreenNames.books}');
+  Future<void> goToAuthorsScreen({required BuildContext context}) async {
+    context.go('/${ScreenNames.authors}');
   }
 }

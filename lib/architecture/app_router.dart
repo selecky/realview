@@ -26,21 +26,21 @@ final _appRouter = GoRouter(
               ),
           routes: [
             GoRoute(
-              path: ScreenNames.books,
-              name: ScreenNames.books,
+              path: ScreenNames.authors,
+              name: ScreenNames.authors,
               builder:
                   (context, state) => GetIt.I.get<Widget>(
-                    instanceName: ScreenNames.books,
+                    instanceName: ScreenNames.authors,
                     param1: state,
                     param2: context,
                   ),
               routes: [
                 GoRoute(
-                  path: '${ScreenNames.bookDetail}/:isbn13',
-                  name: ScreenNames.bookDetail,
+                  path: '${ScreenNames.authorDetail}/:isbn13',
+                  name: ScreenNames.authorDetail,
                   builder:
                       (context, state) => GetIt.I.get<Widget>(
-                        instanceName: ScreenNames.bookDetail,
+                        instanceName: ScreenNames.authorDetail,
                         param1: state,
                         param2: context,
                       ),

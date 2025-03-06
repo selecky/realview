@@ -34,18 +34,6 @@ final _appRouter = GoRouter(
                     param1: state,
                     param2: context,
                   ),
-              routes: [
-                GoRoute(
-                  path: '${ScreenNames.authorDetail}/:isbn13',
-                  name: ScreenNames.authorDetail,
-                  builder:
-                      (context, state) => GetIt.I.get<Widget>(
-                        instanceName: ScreenNames.authorDetail,
-                        param1: state,
-                        param2: context,
-                      ),
-                ),
-              ],
             ),
           ],
         ),

@@ -3,14 +3,12 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i5;
+import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:realview/features/authors/domain/entity/result_entity/get_author_detail_result.dart'
-    as _i3;
 import 'package:realview/features/authors/domain/entity/result_entity/get_authors_result.dart'
     as _i2;
-import 'package:realview/features/authors/domain/repo/authors_repo.dart' as _i4;
+import 'package:realview/features/authors/domain/repo/authors_repo.dart' as _i3;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -31,50 +29,26 @@ class _FakeGetAuthorsResult_0 extends _i1.SmartFake implements _i2.GetAuthorsRes
     : super(parent, parentInvocation);
 }
 
-class _FakeGetAuthorDetailResult_1 extends _i1.SmartFake implements _i3.GetAuthorDetailResult {
-  _FakeGetAuthorDetailResult_1(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
-}
-
 /// A class which mocks [AuthorsRepo].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAuthorsRepo extends _i1.Mock implements _i4.AuthorsRepo {
+class MockAuthorsRepo extends _i1.Mock implements _i3.AuthorsRepo {
   @override
-  _i5.Future<_i2.GetAuthorsResult> getAuthors({required String? keyword}) =>
+  _i4.Future<_i2.GetAuthorsResult> getAuthors({required String? keyword}) =>
       (super.noSuchMethod(
             Invocation.method(#getAuthors, [], {#keyword: keyword}),
-            returnValue: _i5.Future<_i2.GetAuthorsResult>.value(
+            returnValue: _i4.Future<_i2.GetAuthorsResult>.value(
               _FakeGetAuthorsResult_0(
                 this,
                 Invocation.method(#getAuthors, [], {#keyword: keyword}),
               ),
             ),
-            returnValueForMissingStub: _i5.Future<_i2.GetAuthorsResult>.value(
+            returnValueForMissingStub: _i4.Future<_i2.GetAuthorsResult>.value(
               _FakeGetAuthorsResult_0(
                 this,
                 Invocation.method(#getAuthors, [], {#keyword: keyword}),
               ),
             ),
           )
-          as _i5.Future<_i2.GetAuthorsResult>);
-
-  @override
-  _i5.Future<_i3.GetAuthorDetailResult> getAuthorDetail({required String? isbn13}) =>
-      (super.noSuchMethod(
-            Invocation.method(#getAuthorDetail, [], {#isbn13: isbn13}),
-            returnValue: _i5.Future<_i3.GetAuthorDetailResult>.value(
-              _FakeGetAuthorDetailResult_1(
-                this,
-                Invocation.method(#getAuthorDetail, [], {#isbn13: isbn13}),
-              ),
-            ),
-            returnValueForMissingStub: _i5.Future<_i3.GetAuthorDetailResult>.value(
-              _FakeGetAuthorDetailResult_1(
-                this,
-                Invocation.method(#getAuthorDetail, [], {#isbn13: isbn13}),
-              ),
-            ),
-          )
-          as _i5.Future<_i3.GetAuthorDetailResult>);
+          as _i4.Future<_i2.GetAuthorsResult>);
 }

@@ -12,13 +12,3 @@ class GetAuthorsEvent extends AuthorsEvent {
   @override
   List<Object?> get props => [keyword];
 }
-
-class GoToAuthorDetailScreenEvent extends AuthorsEvent {
-  final BuildContext context;
-  final String isbn13;
-
-  const GoToAuthorDetailScreenEvent({required this.context, required this.isbn13});
-
-  @override
-  List<Object?> get props => [context, isbn13];
-}

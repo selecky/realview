@@ -3,7 +3,6 @@ class ScreenNames {
   static const String shell = 'shell';
   static const String home = 'home';
   static const String authors = 'authors';
-  static const String authorDetail = 'author_detail';
 }
 
 class DatabaseNames {

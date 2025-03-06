@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logging/logging.dart';
 import 'package:realview/features/authors/domain/entity/authors_data.dart';
 import 'package:realview/features/authors/presentation/blocs/authors_bloc/authors_bloc.dart';
-import 'package:realview/features/authors/presentation/widgets/authors_screen/authors_tile_content.dart';
+import 'package:realview/features/authors/presentation/widgets/authors_tile_content.dart';
 import 'package:realview/generic/strings.dart';
 import 'package:realview/generic/widgets/app_error_widget.dart';
 import 'package:realview/generic/widgets/app_list_tile.dart';
@@ -75,7 +75,7 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
                     title: stateError.errorMessage.tr(),
                     errorMessage: stateError.errorMessage,
                     onTryAgain: () {
-                      context.read<AuthorsBloc>().add(const GetAuthorsEvent(keyword: 'mongodb'));
+                      context.read<AuthorsBloc>().add(const GetAuthorsEvent(keyword: 'Hemingway'));
                     },
                   ),
                 ),

@@ -35,8 +35,8 @@ class Author extends Equatable {
   final int? readingLogCount;
 
   const Author({
-    required this.key,
-    required this.name,
+    this.key,
+    this.name,
     this.birthDate,
     this.alternateNames,
     this.topSubjects,

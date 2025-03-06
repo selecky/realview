@@ -6,28 +6,20 @@ import 'package:realview/features/authors/domain/entity/authors_data.dart';
 import 'package:realview/features/authors/domain/entity/result_entity/get_authors_result.dart';
 import 'package:realview/features/authors/domain/use_case/get_authors_use_case.dart';
 import 'package:realview/features/authors/presentation/blocs/authors_bloc/authors_bloc.dart';
-import 'package:realview/features/authors/presentation/navigation/authors_navigation.dart';
 import 'package:realview/generic/strings.dart';
 
 class MockGetAuthorsUseCase extends Mock implements GetAuthorsUseCase {}
 
-class MockAuthorsNavigation extends Mock implements AuthorsNavigation {}
-
 void main() {
   late AuthorsBloc authorsBloc;
   late MockGetAuthorsUseCase mockGetAuthorsUseCase;
-  late MockAuthorsNavigation mockAuthorsNavigation;
 
   const String testKeyword = 'testKeyword';
-  const AuthorsData testAuthorsData = AuthorsData(authors: []);
+  const AuthorsData testAuthorsData = AuthorsData(docs: []);
 
   setUp(() {
     mockGetAuthorsUseCase = MockGetAuthorsUseCase();
-    mockAuthorsNavigation = MockAuthorsNavigation();
-    authorsBloc = AuthorsBloc(
-      getAuthorsUseCase: mockGetAuthorsUseCase,
-      navigation: mockAuthorsNavigation,
-    );
+    authorsBloc = AuthorsBloc(getAuthorsUseCase: mockGetAuthorsUseCase);
   });
 
   tearDown(() {

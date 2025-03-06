@@ -13,7 +13,7 @@ void main() {
   late MockAuthorsRepo mockRepo;
   late GetAuthorsUseCase getAuthorsUseCase;
 
-  const AuthorsData testAuthorsData = AuthorsData(authors: [Author(title: 'testTitle')]);
+  const AuthorsData testAuthorsData = AuthorsData(docs: [Author(name: 'testName')]);
 
   setUp(() {
     mockRepo = MockAuthorsRepo();
@@ -29,7 +29,7 @@ void main() {
 
     expect(result, isA<ResultSuccess>());
     if (result is ResultSuccess) {
-      expect(result.authorsData.authors?.first.title, 'testTitle');
+      expect(result.authorsData.docs?.first.name, 'testName');
     }
   });
 }

@@ -6,6 +6,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:realview/architecture/app.dart';
 import 'package:realview/features/dark_mode/presentation/blocs/dark_mode_bloc.dart';
 import 'package:realview/main_widget.dart';
+import 'package:requests_inspector/requests_inspector.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,8 +16,8 @@ Future<void> main() async {
 
   runApp(
     RequestsInspector(
-      enabled: kDebugMode,
-      showInspectorOn: ShowInspectorOn.Shaking,
+      enabled: true,
+      showInspectorOn: ShowInspectorOn.Both,
       hideInspectorBanner: true,
       navigatorKey: null,
       child: EasyLocalization(

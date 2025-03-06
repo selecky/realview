@@ -1,7 +1,7 @@
 // ignore_for_file: type=lint
 class Strings {
   static String app_title = 'app_title';
-  static String apiBaseUrl = 'https://api.itbook.store/1.0';
+  static String apiBaseUrl = 'https://openlibrary.org';
 
   // screen titles
   static String screen_title_home = 'screen_title_home';

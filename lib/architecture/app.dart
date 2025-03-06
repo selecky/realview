@@ -15,6 +15,7 @@ import 'package:realview/features/home/home_module.dart';
 import 'package:realview/features/shell/shell_module.dart';
 import 'package:realview/generic/constants.dart';
 import 'package:realview/generic/strings.dart';
+import 'package:requests_inspector/requests_inspector.dart';
 
 part 'app_dio.dart';
 part 'app_logger.dart';

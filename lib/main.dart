@@ -14,17 +14,23 @@ Future<void> main() async {
   await App.I.init();
 
   runApp(
-    EasyLocalization(
-      supportedLocales: const [Locale('de'), Locale('en')],
-      path: 'assets/translations',
-      fallbackLocale: const Locale('de'),
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider<DarkModeBloc>.value(
-            value: GetIt.I.get<DarkModeBloc>()..add(const InitDarkModeEvent()),
-          ),
-        ],
-        child: const MainWidget(),
+    RequestsInspector(
+      enabled: kDebugMode,
+      showInspectorOn: ShowInspectorOn.Shaking,
+      hideInspectorBanner: true,
+      navigatorKey: null,
+      child: EasyLocalization(
+        supportedLocales: const [Locale('de'), Locale('en')],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('de'),
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider<DarkModeBloc>.value(
+              value: GetIt.I.get<DarkModeBloc>()..add(const InitDarkModeEvent()),
+            ),
+          ],
+          child: const MainWidget(),
+        ),
       ),
     ),
   );

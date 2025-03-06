@@ -6,12 +6,7 @@ class HomeTile extends StatelessWidget {
   final IconData iconData;
   final String title;
 
-  const HomeTile({
-    super.key,
-    required this.onTap,
-    required this.iconData,
-    required this.title,
-  });
+  const HomeTile({super.key, required this.onTap, required this.iconData, required this.title});
 
   @override
   Widget build(BuildContext context) {

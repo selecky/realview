@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           context.read<HomeBloc>().add(GoToBooksScreenEvent(context: context));
           _log.info('book icon tapped');
         },
-      iconData: Icons.menu_book_sharp,
+        iconData: Icons.menu_book_sharp,
         title: Strings.screen_title_books.tr(),
       ),
     );

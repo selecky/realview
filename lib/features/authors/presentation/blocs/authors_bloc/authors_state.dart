@@ -4,6 +4,13 @@ sealed class AuthorsState extends Equatable {
   const AuthorsState();
 }
 
+class AuthorsStateInit extends AuthorsState {
+  const AuthorsStateInit();
+
+  @override
+  List<Object> get props => [];
+}
+
 class AuthorsStateLoading extends AuthorsState {
   const AuthorsStateLoading();
 

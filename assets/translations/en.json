@@ -6,6 +6,8 @@
   "screen_title_author_detail": "Author details",
 
   "authors_empty": "No authors were found.",
+  "author_name": "Author name",
+  "search": "Search",
 
   "error__get_authors": "Failed to load authors.",
   "error__get_author_detail": "Failed to load author details.",

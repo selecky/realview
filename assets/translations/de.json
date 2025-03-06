@@ -6,6 +6,8 @@
   "screen_title_author_detail": "Autorendetails",
 
   "authors_empty": "Keine Bücher gefunden.",
+  "author_name": "Name des Autors",
+  "search": "Suchen",
 
   "error__get_authors": "Bücher konnten nicht geladen werden.",
   "error__get_author_detail": "Das Buch konnte nicht geladen werden.",

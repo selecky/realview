@@ -10,6 +10,7 @@ import 'package:realview/generic/widgets/app_error_widget.dart';
 import 'package:realview/generic/widgets/app_list_tile.dart';
 import 'package:realview/generic/widgets/app_progress.dart';
 import 'package:realview/generic/widgets/app_screen.dart';
+import 'package:realview/generic/widgets/app_text_field.dart';
 
 final _log = Logger('authors_screen');
 
@@ -21,67 +22,96 @@ class AuthorsScreen extends StatefulWidget {
 }
 
 class _AuthorsScreenState extends State<AuthorsScreen> {
-  @override
-  void initState() {
-    context.read<AuthorsBloc>().add(const GetAuthorsEvent(keyword: 'Hemingway'));
-    super.initState();
-  }
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return AppScreen(
       title: Strings.screen_title_authors.tr(),
-      child: BlocBuilder<AuthorsBloc, AuthorsState>(
-        builder: (context, state) {
-          switch (state) {
-            case AuthorsStateLoading():
-              return const Expanded(child: AppProgress());
-            case final AuthorsStateSuccess stateSuccess:
-              if (stateSuccess.authorsData?.docs?.isEmpty ?? true) {
-                return Expanded(
-                  child: Center(
-                    child: Text(
-                      Strings.authors_empty.tr(),
-                      style: Theme.of(context).textTheme.titleMedium,
+      child: Flexible(
+        child: Column(
+          children: [
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Flexible(
+                  child: AppTextField(controller: _controller, title: Strings.author_name.tr()),
+                ),
+                const SizedBox(width: 16),
+                InkWell(
+                  onTap: () {
+                    context.read<AuthorsBloc>().add(GetAuthorsEvent(keyword: _controller.text));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: BorderRadius.circular(16),
                     ),
-                  ),
-                );
-              } else {
-                return Flexible(
-                  child: ListView.builder(
-                    padding: const EdgeInsets.only(top: 8, bottom: 80),
-                    itemCount: stateSuccess.authorsData?.docs?.length,
-                    itemBuilder: (context, index) {
-                      final Author author = stateSuccess.authorsData!.docs![index];
-                      return AppListTile(
-                        onTap: () {
-                          if (author.key != null) {
-                            // context.read<AuthorsBloc>().add(
-                            //   GoToAuthorDetailScreenEvent(context: context, isbn13: author.isbn13!),
-                            // );
-                          }
-                          _log.info('author tile tapped');
-                        },
-                        content: AuthorsTileContent(author: author, index: index),
-                      );
-                    },
-                  ),
-                );
-              }
-            case final AuthorsStateError stateError:
-              return Expanded(
-                child: Center(
-                  child: AppErrorWidget(
-                    title: stateError.errorMessage.tr(),
-                    errorMessage: stateError.errorMessage,
-                    onTryAgain: () {
-                      context.read<AuthorsBloc>().add(const GetAuthorsEvent(keyword: 'Hemingway'));
-                    },
+                    child: Text(Strings.search.tr(), style: Theme.of(context).textTheme.labelLarge),
                   ),
                 ),
-              );
-          }
-        },
+              ],
+            ),
+            BlocBuilder<AuthorsBloc, AuthorsState>(
+              builder: (context, state) {
+                switch (state) {
+                  case AuthorsStateInit():
+                    return const SizedBox();
+                    throw UnimplementedError();
+                  case AuthorsStateLoading():
+                    return const Expanded(child: AppProgress());
+                  case final AuthorsStateSuccess stateSuccess:
+                    if (stateSuccess.authorsData?.docs?.isEmpty ?? true) {
+                      return Expanded(
+                        child: Center(
+                          child: Text(
+                            Strings.authors_empty.tr(),
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                        ),
+                      );
+                    } else {
+                      return Flexible(
+                        child: ListView.builder(
+                          padding: const EdgeInsets.only(top: 8, bottom: 80),
+                          itemCount: stateSuccess.authorsData?.docs?.length,
+                          itemBuilder: (context, index) {
+                            final Author author = stateSuccess.authorsData!.docs![index];
+                            return AppListTile(
+                              onTap: () {
+                                if (author.key != null) {
+                                  // context.read<AuthorsBloc>().add(
+                                  //   GoToAuthorDetailScreenEvent(context: context, isbn13: author.isbn13!),
+                                  // );
+                                }
+                                _log.info('author tile tapped');
+                              },
+                              content: AuthorsTileContent(author: author, index: index),
+                            );
+                          },
+                        ),
+                      );
+                    }
+                  case final AuthorsStateError stateError:
+                    return Expanded(
+                      child: Center(
+                        child: AppErrorWidget(
+                          title: stateError.errorMessage.tr(),
+                          errorMessage: stateError.errorMessage,
+                          onTryAgain: () {
+                            context.read<AuthorsBloc>().add(
+                              const GetAuthorsEvent(keyword: 'Hemingway'),
+                            );
+                          },
+                        ),
+                      ),
+                    );
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

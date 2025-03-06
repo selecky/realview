@@ -14,7 +14,7 @@ part 'authors_state.dart';
 class AuthorsBloc extends Bloc<AuthorsEvent, AuthorsState> {
   final GetAuthorsUseCase getAuthorsUseCase;
 
-  AuthorsBloc({required this.getAuthorsUseCase}) : super(const AuthorsStateLoading()) {
+  AuthorsBloc({required this.getAuthorsUseCase}) : super(const AuthorsStateInit()) {
     on<GetAuthorsEvent>(_onGetAuthorsEvent);
   }
 

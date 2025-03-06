@@ -10,6 +10,8 @@ class Strings {
 
   //authors screen
   static String authors_empty = 'authors_empty';
+  static String author_name = 'author_name';
+  static String search = 'search';
 
   // errors
   static String error = 'error';

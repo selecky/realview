@@ -6,6 +6,7 @@ import 'package:realview/features/authors/domain/entity/authors_data.dart';
 import 'package:realview/features/authors/presentation/blocs/authors_bloc/authors_bloc.dart';
 import 'package:realview/features/authors/presentation/widgets/authors_tile_content.dart';
 import 'package:realview/generic/strings.dart';
+import 'package:realview/generic/widgets/app_button_text.dart';
 import 'package:realview/generic/widgets/app_error_widget.dart';
 import 'package:realview/generic/widgets/app_list_tile.dart';
 import 'package:realview/generic/widgets/app_progress.dart';
@@ -38,18 +39,11 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
                   child: AppTextField(controller: _controller, title: Strings.author_name.tr()),
                 ),
                 const SizedBox(width: 16),
-                InkWell(
+                AppButtonText(
+                  text: Strings.search.tr(),
                   onTap: () {
                     context.read<AuthorsBloc>().add(GetAuthorsEvent(keyword: _controller.text));
                   },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Text(Strings.search.tr(), style: Theme.of(context).textTheme.labelLarge),
-                  ),
                 ),
               ],
             ),
@@ -58,7 +52,6 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
                 switch (state) {
                   case AuthorsStateInit():
                     return const SizedBox();
-                    throw UnimplementedError();
                   case AuthorsStateLoading():
                     return const Expanded(child: AppProgress());
                   case final AuthorsStateSuccess stateSuccess:

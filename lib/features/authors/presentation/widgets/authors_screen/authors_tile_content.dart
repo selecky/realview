@@ -22,12 +22,12 @@ class AuthorsTileContent extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (author.title != null)
-                    Text(author.title!, style: Theme.of(context).textTheme.labelLarge),
-                  if (author.subtitle != null)
+                  if (author.name != null)
+                    Text(author.name!, style: Theme.of(context).textTheme.labelLarge),
+                  if (author.topWork != null)
                     Text(
                       key: UniqueKey(),
-                      author.subtitle!,
+                      author.topWork!,
                       style: Theme.of(context).textTheme.app_bodyMediumGrey,
                     ),
                 ],

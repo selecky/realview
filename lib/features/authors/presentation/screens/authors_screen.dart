@@ -23,7 +23,7 @@ class AuthorsScreen extends StatefulWidget {
 class _AuthorsScreenState extends State<AuthorsScreen> {
   @override
   void initState() {
-    context.read<AuthorsBloc>().add(const GetAuthorsEvent(keyword: 'mongodb'));
+    context.read<AuthorsBloc>().add(const GetAuthorsEvent(keyword: 'Hemingway'));
     super.initState();
   }
 
@@ -37,7 +37,7 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
             case AuthorsStateLoading():
               return const Expanded(child: AppProgress());
             case final AuthorsStateSuccess stateSuccess:
-              if (stateSuccess.authorsData?.authors?.isEmpty ?? true) {
+              if (stateSuccess.authorsData?.docs?.isEmpty ?? true) {
                 return Expanded(
                   child: Center(
                     child: Text(
@@ -50,15 +50,15 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
                 return Flexible(
                   child: ListView.builder(
                     padding: const EdgeInsets.only(top: 8, bottom: 80),
-                    itemCount: stateSuccess.authorsData?.authors?.length,
+                    itemCount: stateSuccess.authorsData?.docs?.length,
                     itemBuilder: (context, index) {
-                      final Author author = stateSuccess.authorsData!.authors![index];
+                      final Author author = stateSuccess.authorsData!.docs![index];
                       return AppListTile(
                         onTap: () {
-                          if (author.isbn13 != null) {
-                            context.read<AuthorsBloc>().add(
-                              GoToAuthorDetailScreenEvent(context: context, isbn13: author.isbn13!),
-                            );
+                          if (author.key != null) {
+                            // context.read<AuthorsBloc>().add(
+                            //   GoToAuthorDetailScreenEvent(context: context, isbn13: author.isbn13!),
+                            // );
                           }
                           _log.info('author tile tapped');
                         },

@@ -4,16 +4,37 @@ import 'package:realview/features/authors/domain/entity/authors_data.dart';
 extension AuthorsDataDtoConverter on AuthorsDataDto {
   AuthorsData toDomain() {
     return AuthorsData(
-      error: error,
-      total: total,
-      page: page,
-      authors: authors?.map((e) => e.toDomain()).toList(),
+      numFound: numFound,
+      start: start,
+      numFoundExact: numFoundExact,
+      docs: docs?.map((e) => e.toDomain()).toList(),
     );
   }
 }
 
 extension AuthorDtoConverter on AuthorDto {
   Author toDomain() {
-    return Author(title: title, subtitle: subtitle, isbn13: isbn13, image: image, url: url);
+    return Author(
+      key: key,
+      name: name,
+      birthDate: birthDate,
+      alternateNames: alternateNames,
+      topSubjects: topSubjects,
+      topWork: topWork,
+      type: type,
+      workCount: workCount,
+      ratingsAverage: ratingsAverage,
+      ratingsSortable: ratingsSortable,
+      ratingsCount: ratingsCount,
+      ratingsCount1: ratingsCount1,
+      ratingsCount2: ratingsCount2,
+      ratingsCount3: ratingsCount3,
+      ratingsCount4: ratingsCount4,
+      ratingsCount5: ratingsCount5,
+      wantToReadCount: wantToReadCount,
+      alreadyReadCount: alreadyReadCount,
+      currentlyReadingCount: currentlyReadingCount,
+      readingLogCount: readingLogCount,
+    );
   }
 }

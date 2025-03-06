@@ -20,14 +20,14 @@ class _AuthorsApi implements AuthorsApi {
   @override
   Future<AuthorsDataDto> getAuthors({required String keyword}) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'q': keyword};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<AuthorsDataDto>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/search/${keyword}',
+            '/search/authors.json',
             queryParameters: queryParameters,
             data: _data,
           )

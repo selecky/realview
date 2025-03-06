@@ -9,8 +9,8 @@ part 'authors_api.g.dart';
 abstract class AuthorsApi {
   factory AuthorsApi(Dio dio) = _AuthorsApi;
 
-  @GET('/search/{keyword}')
-  Future<AuthorsDataDto> getAuthors({@Path() required String keyword});
+  @GET('/search/authors.json')
+  Future<AuthorsDataDto> getAuthors({@Query('q') required String keyword});
 
   @GET('/books/{isbn13}')
   Future<AuthorDetailDto> getAuthorDetail({@Path() required String isbn13});

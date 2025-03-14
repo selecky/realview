@@ -16,8 +16,8 @@ class Strings {
   // errors
   static String error = 'error';
   static String try_again = 'try_again';
+  static String connection_error = 'connection error';
   static String error__network = 'error__network';
-  static String error__network_info = 'error__network_info';
   static String error__field_empty = 'error__field_empty';
   static String error__get_authors = 'error__get_authors';
   static String error__get_author_detail = 'error__get_author_detail';

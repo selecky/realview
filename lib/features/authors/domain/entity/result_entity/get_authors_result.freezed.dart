@@ -140,4 +140,36 @@ String toString() {
 
 
 
+/// @nodoc
+
+
+class ResultConnectionError implements GetAuthorsResult {
+  const ResultConnectionError();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ResultConnectionError);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'GetAuthorsResult.connectionError()';
+}
+
+
+}
+
+
+
+
 // dart format on

@@ -90,11 +90,10 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
                     return Expanded(
                       child: Center(
                         child: AppErrorWidget(
-                          title: stateError.errorMessage.tr(),
-                          errorMessage: stateError.errorMessage,
+                          text: stateError.errorMessage,
                           onTryAgain: () {
                             context.read<AuthorsBloc>().add(
-                              const GetAuthorsEvent(keyword: 'Hemingway'),
+                              GetAuthorsEvent(keyword: _controller.text),
                             );
                           },
                         ),

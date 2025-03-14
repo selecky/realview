@@ -7,4 +7,5 @@ part 'get_authors_result.freezed.dart';
 class GetAuthorsResult with _$GetAuthorsResult {
   const factory GetAuthorsResult.success({required AuthorsData authorsData}) = ResultSuccess;
   const factory GetAuthorsResult.failure() = ResultFailure;
+  const factory GetAuthorsResult.connectionError() = ResultConnectionError;
 }

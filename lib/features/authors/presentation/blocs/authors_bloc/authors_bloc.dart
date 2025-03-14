@@ -26,6 +26,8 @@ class AuthorsBloc extends Bloc<AuthorsEvent, AuthorsState> {
         emit(AuthorsStateSuccess(authorsData: success.authorsData));
       case ResultFailure():
         emit(AuthorsStateError(errorMessage: Strings.error__get_authors.tr()));
+      case ResultConnectionError():
+        emit(AuthorsStateError(errorMessage: Strings.error__network.tr()));
     }
   }
 }

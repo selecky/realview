@@ -13,7 +13,6 @@
   "error__get_author_detail": "Das Buch konnte nicht geladen werden.",
   "error": "Fehler",
   "try_again": "Versuche es erneut",
-  "error__network": "Netzwerkfehler",
-  "error__network_info": "Keine Internetverbindung",
-  "error__field_empty": "Dieses Feld darf nicht leer sein"
+  "error__network": "Keine Internetverbindung",
+  "error__field_empty": "Dieses Feld darf nicht leer sein",
 }

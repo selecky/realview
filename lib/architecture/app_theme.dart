@@ -117,4 +117,6 @@ extension CustomColors on ThemeData {
   Color get app_textColorGrey => App.isDarkMode ? Colors.grey[500]! : Colors.grey[600]!;
 
   Color get app_tileColor => App.isDarkMode ? const Color(0xFF585858) : Colors.grey[200]!;
+
+  Color get app_redColor => App.isDarkMode ? Colors.red[400]! : Colors.red;
 }

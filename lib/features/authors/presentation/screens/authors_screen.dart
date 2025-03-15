@@ -24,6 +24,7 @@ class AuthorsScreen extends StatefulWidget {
 
 class _AuthorsScreenState extends State<AuthorsScreen> {
   final TextEditingController _controller = TextEditingController();
+  String? errorText;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +37,20 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
             Row(
               children: [
                 Flexible(
-                  child: AppTextField(controller: _controller, title: Strings.author_name.tr()),
+                  child: AppTextField(
+                    controller: _controller,
+                    title: Strings.author_name.tr(),
+                    errorText: errorText,
+                  ),
                 ),
                 const SizedBox(width: 16),
                 AppButtonText(
                   text: Strings.search.tr(),
                   onTap: () {
-                    context.read<AuthorsBloc>().add(GetAuthorsEvent(keyword: _controller.text));
+                    final bool isValid = _validateTextField();
+                    if (isValid) {
+                      context.read<AuthorsBloc>().add(GetAuthorsEvent(keyword: _controller.text));
+                    }
                   },
                 ),
               ],
@@ -56,14 +64,7 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
                     return const Expanded(child: AppProgress());
                   case final AuthorsStateSuccess stateSuccess:
                     if (stateSuccess.authorsData?.docs?.isEmpty ?? true) {
-                      return Expanded(
-                        child: Center(
-                          child: Text(
-                            Strings.authors_empty.tr(),
-                            style: Theme.of(context).textTheme.titleMedium,
-                          ),
-                        ),
-                      );
+                      return Expanded(child: Center(child: Text(Strings.authors_empty.tr())));
                     } else {
                       return Flexible(
                         child: ListView.builder(
@@ -106,5 +107,21 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
         ),
       ),
     );
+  }
+
+  bool _validateTextField() {
+    if (_controller.text.isEmpty) {
+      setState(() {
+        errorText = Strings.error__field_empty.tr();
+      });
+      return false;
+    } else {
+      if (errorText != null) {
+        setState(() {
+          errorText = null;
+        });
+      }
+      return true;
+    }
   }
 }

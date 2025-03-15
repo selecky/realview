@@ -43,6 +43,15 @@ class AppTextField extends StatelessWidget {
             borderSide: BorderSide(color: App.appTheme.app_textColor, width: 1),
             borderRadius: BorderRadius.circular(16),
           ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: App.appTheme.app_redColor, width: 1),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: App.appTheme.app_redColor, width: 1),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          errorStyle: App.appTheme.textTheme.bodySmall!.copyWith(color: App.appTheme.app_redColor),
           suffixIconConstraints: const BoxConstraints(minWidth: 24, minHeight: 24),
           suffixIcon: suffixWidget,
           labelText: title,

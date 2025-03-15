@@ -34,7 +34,9 @@ class AuthorsModule extends AppModule {
 
   @override
   void registerDataSource() {
-    GetIt.I.registerFactory<AuthorsApi>(() => AuthorsApi(App.getDio(endpoint: Strings.apiBaseUrl)));
+    GetIt.I.registerFactory<AuthorsApi>(
+      () => AuthorsApi(App.getDio(endpoint: Strings.api_base_url)),
+    );
   }
 
   @override

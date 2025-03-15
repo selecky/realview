@@ -16,7 +16,7 @@ import 'package:realview/generic/strings.dart';
 class AuthorsModule extends AppModule {
   @override
   void registerBloc() {
-    GetIt.I.registerLazySingleton<AuthorsBloc>(
+    GetIt.I.registerFactory<AuthorsBloc>(
       () => AuthorsBloc(getAuthorsUseCase: GetIt.I.get<GetAuthorsUseCase>()),
     );
   }

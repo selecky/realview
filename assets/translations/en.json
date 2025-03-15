@@ -13,6 +13,6 @@
   "error__get_author_detail": "Failed to load author details.",
   "error": "Error",
   "try_again": "Try again",
-  "error__network": "No internet connection",
-  "error__field_empty": "This field cannot be empty"
+  "error__network": "No internet connection.",
+  "error__field_empty": "This field cannot be empty."
 }

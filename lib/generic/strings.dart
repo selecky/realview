@@ -1,7 +1,7 @@
-// ignore_for_file: type=lint
+// ignore_for_file: non_constant_identifier_names
 class Strings {
   static String app_title = 'app_title';
-  static String apiBaseUrl = 'https://openlibrary.org';
+  static String api_base_url = 'https://openlibrary.org';
 
   // screen titles
   static String screen_title_home = 'screen_title_home';

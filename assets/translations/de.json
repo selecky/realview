@@ -5,14 +5,14 @@
   "screen_title_authors": "Buchautoren",
   "screen_title_author_detail": "Autorendetails",
 
-  "authors_empty": "Keine Bücher gefunden.",
+  "authors_empty": "Keine Autoren gefunden.",
   "author_name": "Name des Autors",
   "search": "Suchen",
 
-  "error__get_authors": "Bücher konnten nicht geladen werden.",
-  "error__get_author_detail": "Das Buch konnte nicht geladen werden.",
+  "error__get_authors": "Autoren konnten nicht geladen werden.",
+  "error__get_author_detail": "Der Autor konnte nicht geladen werden.",
   "error": "Fehler",
   "try_again": "Versuche es erneut",
-  "error__network": "Keine Internetverbindung",
-  "error__field_empty": "Dieses Feld darf nicht leer sein",
+  "error__network": "Keine Internetverbindung.",
+  "error__field_empty": "Dieses Feld darf nicht leer sein."
 }

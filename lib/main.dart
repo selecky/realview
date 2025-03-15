@@ -16,8 +16,8 @@ Future<void> main() async {
 
   runApp(
     RequestsInspector(
-      enabled: true,
-      showInspectorOn: ShowInspectorOn.Both,
+      enabled: false,
+      showInspectorOn: ShowInspectorOn.Shaking,
       hideInspectorBanner: true,
       navigatorKey: null,
       child: EasyLocalization(

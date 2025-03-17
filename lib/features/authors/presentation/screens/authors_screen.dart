@@ -27,6 +27,12 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
   String? errorText;
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AppScreen(
       title: Strings.screen_title_authors.tr(),

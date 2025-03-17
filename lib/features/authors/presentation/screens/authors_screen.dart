@@ -35,31 +35,36 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
   @override
   Widget build(BuildContext context) {
     return AppScreen(
+      padding: EdgeInsets.zero,
+      titlePadding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
       title: Strings.screen_title_authors.tr(),
       child: Flexible(
         child: Column(
           children: [
             const SizedBox(height: 16),
-            Row(
-              children: [
-                Flexible(
-                  child: AppTextField(
-                    controller: _controller,
-                    title: Strings.author_name.tr(),
-                    errorText: errorText,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  Flexible(
+                    child: AppTextField(
+                      controller: _controller,
+                      title: Strings.author_name.tr(),
+                      errorText: errorText,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 16),
-                AppButtonText(
-                  text: Strings.search.tr(),
-                  onTap: () {
-                    final bool isValid = _validateTextField();
-                    if (isValid) {
-                      context.read<AuthorsBloc>().add(GetAuthorsEvent(keyword: _controller.text));
-                    }
-                  },
-                ),
-              ],
+                  const SizedBox(width: 16),
+                  AppButtonText(
+                    text: Strings.search.tr(),
+                    onTap: () {
+                      final bool isValid = _validateTextField();
+                      if (isValid) {
+                        context.read<AuthorsBloc>().add(GetAuthorsEvent(keyword: _controller.text));
+                      }
+                    },
+                  ),
+                ],
+              ),
             ),
             BlocBuilder<AuthorsBloc, AuthorsState>(
               builder: (context, state) {

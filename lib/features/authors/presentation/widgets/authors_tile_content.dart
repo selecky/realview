@@ -14,6 +14,7 @@ class AuthorsTileContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        const SizedBox(width: 16),
         Text((index + 1).toString()),
         const SizedBox(width: 16),
         Flexible(
@@ -35,6 +36,7 @@ class AuthorsTileContent extends StatelessWidget {
             },
           ),
         ),
+        const SizedBox(width: 16),
       ],
     );
   }

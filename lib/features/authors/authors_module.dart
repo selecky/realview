@@ -9,6 +9,7 @@ import 'package:realview/features/authors/data/repo_impl/authors_repo_impl.dart'
 import 'package:realview/features/authors/domain/repo/authors_repo.dart';
 import 'package:realview/features/authors/domain/use_case/get_authors_use_case.dart';
 import 'package:realview/features/authors/presentation/blocs/authors_bloc/authors_bloc.dart';
+import 'package:realview/features/authors/presentation/navigation/authors_navigation.dart';
 import 'package:realview/features/authors/presentation/screens/authors_screen.dart';
 import 'package:realview/generic/constants.dart';
 import 'package:realview/generic/strings.dart';
@@ -17,7 +18,10 @@ class AuthorsModule extends AppModule {
   @override
   void registerBloc() {
     GetIt.I.registerFactory<AuthorsBloc>(
-      () => AuthorsBloc(getAuthorsUseCase: GetIt.I.get<GetAuthorsUseCase>()),
+      () => AuthorsBloc(
+        getAuthorsUseCase: GetIt.I.get<GetAuthorsUseCase>(),
+        authorsNavigation: GetIt.I.get<AuthorsNavigation>(),
+      ),
     );
   }
 
@@ -40,7 +44,9 @@ class AuthorsModule extends AppModule {
   }
 
   @override
-  void registerNavigation() {}
+  void registerNavigation() {
+    GetIt.I.registerFactory<AuthorsNavigation>(AuthorsNavigation.new);
+  }
 
   @override
   void registerRepo() {

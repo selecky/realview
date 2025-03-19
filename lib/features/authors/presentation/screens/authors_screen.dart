@@ -86,9 +86,12 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
                             return AppListTile(
                               onTap: () {
                                 if (author.key != null) {
-                                  // context.read<AuthorsBloc>().add(
-                                  //   GoToAuthorDetailScreenEvent(context: context, isbn13: author.isbn13!),
-                                  // );
+                                  context.read<AuthorsBloc>().add(
+                                    GoToAuthorDetailScreenEvent(
+                                      context: context,
+                                      authorId: author.key!,
+                                    ),
+                                  );
                                 }
                                 _log.info('author tile tapped');
                               },

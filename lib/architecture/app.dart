@@ -22,6 +22,7 @@ part 'app_dio.dart';
 part 'app_logger.dart';
 part 'app_router.dart';
 part 'app_theme.dart';
+part 'app_modules.dart';
 
 class App {
   App._();
@@ -41,14 +42,6 @@ class App {
   static GoRouter get goRouter => I._goRouter;
 
   static const Dio Function({required String endpoint}) getDio = _getDio;
-
-  final List<AppModule> _modules = [
-    AuthorsModule(),
-    DarkModeModule(),
-    HomeModule(),
-    ShellModule(),
-    AuthorDetailModule(),
-  ];
 
   Future<void> init() async {
     _configureLogger();

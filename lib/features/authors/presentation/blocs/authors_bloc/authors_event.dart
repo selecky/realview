@@ -22,3 +22,10 @@ class GoToAuthorDetailScreenEvent extends AuthorsEvent {
   @override
   List<Object?> get props => [context];
 }
+
+class ResetBlocEvent extends AuthorsEvent {
+  const ResetBlocEvent();
+
+  @override
+  List<Object?> get props => [];
+}

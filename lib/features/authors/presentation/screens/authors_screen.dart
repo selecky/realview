@@ -27,6 +27,12 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
   String? errorText;
 
   @override
+  void initState() {
+    context.read<AuthorsBloc>().add(const ResetBlocEvent());
+    super.initState();
+  }
+
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();

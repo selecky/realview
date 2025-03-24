@@ -21,6 +21,7 @@ class AuthorsBloc extends Bloc<AuthorsEvent, AuthorsState> {
     : super(const AuthorsStateInit()) {
     on<GetAuthorsEvent>(_onGetAuthorsEvent);
     on<GoToAuthorDetailScreenEvent>(_onGoToAuthorDetailScreenEvent);
+    on<ResetBlocEvent>(_onResetBlocEvent);
   }
 
   Future<void> _onGetAuthorsEvent(GetAuthorsEvent event, Emitter<AuthorsState> emit) async {
@@ -44,5 +45,9 @@ class AuthorsBloc extends Bloc<AuthorsEvent, AuthorsState> {
       context: event.context,
       authorId: event.authorId,
     );
+  }
+
+  Future<void> _onResetBlocEvent(ResetBlocEvent event, Emitter<AuthorsState> emit) async {
+    emit(const AuthorsStateInit());
   }
 }

@@ -17,7 +17,7 @@ import 'package:realview/generic/strings.dart';
 class AuthorsModule extends AppModule {
   @override
   void registerBloc() {
-    GetIt.I.registerLazySingleton<AuthorsBloc>(
+    GetIt.I.registerFactory<AuthorsBloc>(
       () => AuthorsBloc(
         getAuthorsUseCase: GetIt.I.get<GetAuthorsUseCase>(),
         authorsNavigation: GetIt.I.get<AuthorsNavigation>(),
@@ -29,7 +29,7 @@ class AuthorsModule extends AppModule {
   void registerScreenProviders() {
     GetIt.I.registerFactoryParam<Widget, GoRouterState, BuildContext>(
       (goRouterState, context) => MultiBlocProvider(
-        providers: [BlocProvider<AuthorsBloc>.value(value: GetIt.I.get<AuthorsBloc>())],
+        providers: [BlocProvider<AuthorsBloc>(create: (blocContext) => GetIt.I.get<AuthorsBloc>())],
         child: GetIt.I.get<AuthorsScreen>(param1: goRouterState, param2: context),
       ),
       instanceName: ScreenNames.authors,

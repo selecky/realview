@@ -25,7 +25,9 @@ class AuthorDetailModule extends AppModule {
   void registerScreenProviders() {
     GetIt.I.registerFactoryParam<Widget, GoRouterState, BuildContext>(
       (goRouterState, context) => MultiBlocProvider(
-        providers: [BlocProvider<AuthorDetailBloc>.value(value: GetIt.I.get<AuthorDetailBloc>())],
+        providers: [
+          BlocProvider<AuthorDetailBloc>(create: (blocContext) => GetIt.I.get<AuthorDetailBloc>()),
+        ],
         child: GetIt.I.get<AuthorDetailScreen>(param1: goRouterState, param2: context),
       ),
       instanceName: ScreenNames.authorDetail,

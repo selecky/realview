@@ -15,7 +15,9 @@ class ShellModule extends AppModule {
   void registerScreenProviders() {
     GetIt.I.registerFactoryParam<Widget, GoRouterState, Widget>(
       (goRouterState, shellChild) => MultiBlocProvider(
-        providers: [BlocProvider<DarkModeBloc>.value(value: GetIt.I.get<DarkModeBloc>())],
+        providers: [
+          BlocProvider<DarkModeBloc>(create: (blocContext) => GetIt.I.get<DarkModeBloc>()),
+        ],
         child: GetIt.I.get<ShellScreen>(param1: goRouterState, param2: shellChild),
       ),
       instanceName: ScreenNames.shell,

@@ -20,7 +20,7 @@ class HomeModule extends AppModule {
   void registerScreenProviders() {
     GetIt.I.registerFactoryParam<Widget, GoRouterState, BuildContext>(
       (goRouterState, context) => MultiBlocProvider(
-        providers: [BlocProvider<HomeBloc>.value(value: GetIt.I.get<HomeBloc>())],
+        providers: [BlocProvider<HomeBloc>(create: (blocContext) => GetIt.I.get<HomeBloc>())],
         child: GetIt.I.get<HomeScreen>(param1: goRouterState, param2: context),
       ),
       instanceName: ScreenNames.home,

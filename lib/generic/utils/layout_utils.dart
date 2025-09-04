@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 enum LayoutType { mobile, tablet, desktop }
 
-class ResponsiveLayoutUtils {
+class LayoutUtils {
   // Breakpoints based on shortestSide of the screen
   static LayoutType getLayoutType(BuildContext context) {
     final double shortestSide = MediaQuery.sizeOf(context).shortestSide;
@@ -14,6 +14,10 @@ class ResponsiveLayoutUtils {
     } else {
       return LayoutType.desktop;
     }
+  }
+
+  static bool isLandscape(BuildContext context) {
+    return MediaQuery.orientationOf(context) == Orientation.landscape;
   }
 
   static bool isLayoutMobile(BuildContext context) => getLayoutType(context) == LayoutType.mobile;

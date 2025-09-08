@@ -1,6 +1,6 @@
 abstract class AppDatabase {
-  Future<void> putString(String key, String value);
-  Future<String?> getString(String key);
+  Future<void> put(String key, Object? value);
+  Future<Object?> get(String key);
   Future<void> clear();
-  Future<Stream<String?>> observeStringOrNull(String key);
+  Future<Stream<Object?>> observe(String key);
 }

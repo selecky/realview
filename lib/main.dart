@@ -9,6 +9,7 @@ import 'package:realview/main_widget.dart';
 import 'package:requests_inspector/requests_inspector.dart';
 
 Future<void> main() async {
+  // Bloc.observer = AppBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Hive.initFlutter();

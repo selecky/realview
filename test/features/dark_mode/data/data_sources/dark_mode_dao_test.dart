@@ -18,7 +18,7 @@ void main() {
     });
 
     test('loadIsDark returns true when stored value is "true"', () async {
-      when(mockSettingsDatabase.getString(DarkModeDao.keyIsDark)).thenAnswer((_) async => 'true');
+      when(mockSettingsDatabase.get(DarkModeDao.keyIsDark)).thenAnswer((_) async => 'true');
 
       final result = await darkModeDao.loadIsDark();
       expect(result, true);
@@ -26,7 +26,7 @@ void main() {
 
     test('storeIsDark stores boolean as string', () async {
       await darkModeDao.storeIsDark(isDark: true);
-      verify(mockSettingsDatabase.putString(DarkModeDao.keyIsDark, 'true')).called(1);
+      verify(mockSettingsDatabase.put(DarkModeDao.keyIsDark, 'true')).called(1);
     });
   });
 }

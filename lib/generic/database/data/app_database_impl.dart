@@ -2,33 +2,30 @@ import 'package:hive/hive.dart';
 import 'package:realview/generic/database/data/app_database.dart';
 import 'package:realview/generic/database/data/settings_database.dart';
 
+/// Implementation backed by Hive
 class AppDatabaseImpl implements AppDatabase, SettingsDatabase {
-  AppDatabaseImpl({required String databaseName}) : _hiveBox = Hive.openBox<String?>(databaseName);
+  final String databaseName;
+  final Future<Box<Object?>> _box;
 
-  final Future<Box<String?>> _hiveBox;
+  AppDatabaseImpl({required this.databaseName}) : _box = Hive.openBox<Object?>(databaseName);
+
+  @override
+  Future<void> put(String key, Object? value) async {
+    await (await _box).put(key, value);
+  }
+
+  @override
+  Future<Object?> get(String key) async {
+    return (await _box).get(key);
+  }
 
   @override
   Future<void> clear() async {
-    await (await _hiveBox).clear();
+    await (await _box).clear();
   }
 
   @override
-  Future<String?> getString(String key) async {
-    return (await _hiveBox).get(key);
-  }
-
-  @override
-  Future<void> putString(String key, String value) async {
-    await (await _hiveBox).put(key, value);
-  }
-
-  @override
-  Future<Stream<String?>> observeStringOrNull(String key) async {
-    final box = await _hiveBox;
-    Future.delayed(const Duration(milliseconds: 100), () {
-      final value = box.get(key);
-      box.put(key, value);
-    });
-    return box.watch(key: key).map((event) => event.value?.toString());
+  Future<Stream<Object?>> observe(String key) async {
+    return (await _box).watch(key: key).map((event) => event.value);
   }
 }

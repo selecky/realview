@@ -27,22 +27,22 @@ import 'package:realview/generic/database/data/settings_database.dart' as _i2;
 /// See the documentation for Mockito's code generation for more information.
 class MockSettingsDatabase extends _i1.Mock implements _i2.SettingsDatabase {
   @override
-  _i3.Future<void> putString(String? key, String? value) =>
+  _i3.Future<void> put(String? key, Object? value) =>
       (super.noSuchMethod(
-            Invocation.method(#putString, [key, value]),
+            Invocation.method(#put, [key, value]),
             returnValue: _i3.Future<void>.value(),
             returnValueForMissingStub: _i3.Future<void>.value(),
           )
           as _i3.Future<void>);
 
   @override
-  _i3.Future<String?> getString(String? key) =>
+  _i3.Future<Object?> get(String? key) =>
       (super.noSuchMethod(
-            Invocation.method(#getString, [key]),
-            returnValue: _i3.Future<String?>.value(),
-            returnValueForMissingStub: _i3.Future<String?>.value(),
+            Invocation.method(#get, [key]),
+            returnValue: _i3.Future<Object?>.value(),
+            returnValueForMissingStub: _i3.Future<Object?>.value(),
           )
-          as _i3.Future<String?>);
+          as _i3.Future<Object?>);
 
   @override
   _i3.Future<void> clear() =>
@@ -54,13 +54,13 @@ class MockSettingsDatabase extends _i1.Mock implements _i2.SettingsDatabase {
           as _i3.Future<void>);
 
   @override
-  _i3.Future<_i3.Stream<String?>> observeStringOrNull(String? key) =>
+  _i3.Future<_i3.Stream<Object?>> observe(String? key) =>
       (super.noSuchMethod(
-            Invocation.method(#observeStringOrNull, [key]),
-            returnValue: _i3.Future<_i3.Stream<String?>>.value(_i3.Stream<String?>.empty()),
-            returnValueForMissingStub: _i3.Future<_i3.Stream<String?>>.value(
-              _i3.Stream<String?>.empty(),
+            Invocation.method(#observe, [key]),
+            returnValue: _i3.Future<_i3.Stream<Object?>>.value(_i3.Stream<Object?>.empty()),
+            returnValueForMissingStub: _i3.Future<_i3.Stream<Object?>>.value(
+              _i3.Stream<Object?>.empty(),
             ),
           )
-          as _i3.Future<_i3.Stream<String?>>);
+          as _i3.Future<_i3.Stream<Object?>>);
 }

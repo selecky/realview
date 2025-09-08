@@ -7,11 +7,11 @@ class DarkModeDao {
   final SettingsDatabase settingsDatabase;
 
   Future<bool?> loadIsDark() async {
-    final bool isDark = await settingsDatabase.getString(keyIsDark) == 'true';
+    final bool isDark = await settingsDatabase.get(keyIsDark) == 'true';
     return isDark;
   }
 
   Future<void> storeIsDark({required bool isDark}) async {
-    await settingsDatabase.putString(keyIsDark, isDark.toString());
+    await settingsDatabase.put(keyIsDark, isDark.toString());
   }
 }

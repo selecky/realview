@@ -7,7 +7,7 @@ import 'package:realview/features/authors/domain/entity/result_entity/get_author
 import 'package:realview/features/authors/domain/use_case/get_authors_use_case.dart';
 import 'package:realview/features/authors/presentation/blocs/authors_bloc/authors_bloc.dart';
 import 'package:realview/features/authors/presentation/navigation/authors_navigation.dart';
-import 'package:realview/generic/strings.dart';
+import 'package:realview/utils/strings.dart';
 
 class MockGetAuthorsUseCase extends Mock implements GetAuthorsUseCase {}
 

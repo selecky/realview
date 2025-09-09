@@ -1,4 +1,4 @@
-import 'package:realview/architecture/utils/use_case.dart';
+import 'package:realview/utils/use_case.dart';
 import 'package:realview/features/authors/domain/entity/result_entity/get_authors_result.dart';
 import 'package:realview/features/authors/domain/repo/authors_repo.dart';
 

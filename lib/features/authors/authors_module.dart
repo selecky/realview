@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:realview/architecture/app.dart';
-import 'package:realview/architecture/utils/app_module.dart';
+import 'package:realview/utils/app_module.dart';
 import 'package:realview/features/authors/data/data_source/authors_api.dart';
 import 'package:realview/features/authors/data/repo_impl/authors_repo_impl.dart';
 import 'package:realview/features/authors/domain/repo/authors_repo.dart';
@@ -11,8 +11,8 @@ import 'package:realview/features/authors/domain/use_case/get_authors_use_case.d
 import 'package:realview/features/authors/presentation/blocs/authors_bloc/authors_bloc.dart';
 import 'package:realview/features/authors/presentation/navigation/authors_navigation.dart';
 import 'package:realview/features/authors/presentation/screens/authors_screen.dart';
-import 'package:realview/generic/constants.dart';
-import 'package:realview/generic/strings.dart';
+import 'package:realview/utils/constants.dart';
+import 'package:realview/utils/strings.dart';
 
 class AuthorsModule extends AppModule {
   @override

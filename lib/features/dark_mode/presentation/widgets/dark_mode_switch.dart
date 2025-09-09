@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logging/logging.dart';
 import 'package:realview/architecture/app.dart';
 import 'package:realview/features/dark_mode/presentation/blocs/dark_mode_bloc.dart';
-import 'package:realview/generic/constants.dart';
+import 'package:realview/utils/constants.dart';
 
 final _log = Logger('dark_mode_switch');
 

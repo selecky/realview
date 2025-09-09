@@ -1,4 +1,4 @@
-import 'package:realview/generic/database/data/settings_database.dart';
+import 'package:realview/database/settings_database.dart';
 
 class DarkModeDao {
   DarkModeDao({required this.settingsDatabase});

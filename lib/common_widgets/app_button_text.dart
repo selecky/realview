@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realview/generic/constants.dart';
+import 'package:realview/utils/constants.dart';
 
 class AppButtonText extends StatelessWidget {
   final void Function() onTap;

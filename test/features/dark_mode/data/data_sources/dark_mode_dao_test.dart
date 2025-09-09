@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:realview/database/settings_database.dart';
 import 'package:realview/features/dark_mode/data/data_sources/dark_mode_dao.dart';
-import 'package:realview/generic/database/data/settings_database.dart';
 
 import 'dark_mode_dao_test.mocks.dart';
 

@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:realview/generic/strings.dart';
-import 'package:realview/generic/widgets/app_button_text.dart';
+import 'package:realview/utils/strings.dart';
+import 'package:realview/common_widgets/app_button_text.dart';
 
 class AppErrorWidget extends StatelessWidget {
   const AppErrorWidget({required this.text, this.onTryAgain, super.key});

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
-import 'package:realview/architecture/utils/app_module.dart';
+import 'package:realview/utils/app_module.dart';
+import 'package:realview/database/app_database_impl.dart';
+import 'package:realview/database/settings_database.dart';
 import 'package:realview/features/home/presentation/blocs/home_bloc.dart';
 import 'package:realview/features/home/presentation/navigation/home_navigation.dart';
 import 'package:realview/features/home/presentation/screens/home_screen.dart';
-import 'package:realview/generic/constants.dart';
-import 'package:realview/generic/database/data/app_database_impl.dart';
-import 'package:realview/generic/database/data/settings_database.dart';
+import 'package:realview/utils/constants.dart';
 
 class HomeModule extends AppModule {
   @override

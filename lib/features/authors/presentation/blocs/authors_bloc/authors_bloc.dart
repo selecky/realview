@@ -8,7 +8,7 @@ import 'package:realview/features/authors/domain/entity/authors_data.dart';
 import 'package:realview/features/authors/domain/entity/result_entity/get_authors_result.dart';
 import 'package:realview/features/authors/domain/use_case/get_authors_use_case.dart';
 import 'package:realview/features/authors/presentation/navigation/authors_navigation.dart';
-import 'package:realview/generic/strings.dart';
+import 'package:realview/utils/strings.dart';
 
 part 'authors_event.dart';
 part 'authors_state.dart';

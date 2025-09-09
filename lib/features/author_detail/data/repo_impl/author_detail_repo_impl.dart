@@ -4,7 +4,7 @@ import 'package:realview/features/author_detail/data/data_source/author_detail_a
 import 'package:realview/features/author_detail/data/dto/author_detail_dto.dart';
 import 'package:realview/features/author_detail/domain/entity/result_entity/get_author_detail_result.dart';
 import 'package:realview/features/author_detail/domain/repo/author_detail_repo.dart';
-import 'package:realview/generic/strings.dart';
+import 'package:realview/utils/strings.dart';
 
 final _log = Logger('author_detail_repo_impl');
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:realview/generic/constants.dart';
+import 'package:realview/utils/constants.dart';
 
 class AuthorsNavigation {
   const AuthorsNavigation();

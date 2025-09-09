@@ -6,8 +6,8 @@
 import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:realview/database/settings_database.dart' as _i2;
 import 'package:realview/features/dark_mode/data/data_sources/dark_mode_dao.dart' as _i3;
-import 'package:realview/generic/database/data/settings_database.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values

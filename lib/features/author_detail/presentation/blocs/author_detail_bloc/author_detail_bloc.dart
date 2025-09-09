@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realview/features/author_detail/domain/entity/author_detail.dart';
 import 'package:realview/features/author_detail/domain/entity/result_entity/get_author_detail_result.dart';
 import 'package:realview/features/author_detail/domain/use_case/get_author_detail_use_case.dart';
-import 'package:realview/generic/strings.dart';
+import 'package:realview/utils/strings.dart';
 
 part 'author_detail_event.dart';
 part 'author_detail_state.dart';

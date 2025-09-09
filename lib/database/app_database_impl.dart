@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
-import 'package:realview/generic/database/data/app_database.dart';
-import 'package:realview/generic/database/data/settings_database.dart';
+import 'package:realview/database/app_database.dart';
+import 'package:realview/database/settings_database.dart';
 
 /// Implementation backed by Hive
 class AppDatabaseImpl implements AppDatabase, SettingsDatabase {

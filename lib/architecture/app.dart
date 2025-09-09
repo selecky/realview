@@ -8,14 +8,14 @@ import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart';
-import 'package:realview/architecture/utils/app_module.dart';
+import 'package:realview/utils/app_module.dart';
 import 'package:realview/features/author_detail/author_detail_module.dart';
 import 'package:realview/features/authors/authors_module.dart';
 import 'package:realview/features/dark_mode/dark_mode_module.dart';
 import 'package:realview/features/home/home_module.dart';
 import 'package:realview/features/shell/shell_module.dart';
-import 'package:realview/generic/constants.dart';
-import 'package:realview/generic/strings.dart';
+import 'package:realview/utils/constants.dart';
+import 'package:realview/utils/strings.dart';
 import 'package:requests_inspector/requests_inspector.dart';
 
 part 'app_dio.dart';

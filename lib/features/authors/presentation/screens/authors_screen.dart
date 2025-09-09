@@ -5,13 +5,13 @@ import 'package:logging/logging.dart';
 import 'package:realview/features/authors/domain/entity/authors_data.dart';
 import 'package:realview/features/authors/presentation/blocs/authors_bloc/authors_bloc.dart';
 import 'package:realview/features/authors/presentation/widgets/authors_tile_content.dart';
-import 'package:realview/generic/strings.dart';
-import 'package:realview/generic/widgets/app_button_text.dart';
-import 'package:realview/generic/widgets/app_error_widget.dart';
-import 'package:realview/generic/widgets/app_list_tile.dart';
-import 'package:realview/generic/widgets/app_progress.dart';
-import 'package:realview/generic/widgets/app_screen.dart';
-import 'package:realview/generic/widgets/app_text_field.dart';
+import 'package:realview/utils/strings.dart';
+import 'package:realview/common_widgets/app_button_text.dart';
+import 'package:realview/common_widgets/app_error_widget.dart';
+import 'package:realview/common_widgets/app_list_tile.dart';
+import 'package:realview/common_widgets/app_progress.dart';
+import 'package:realview/common_widgets/app_screen.dart';
+import 'package:realview/common_widgets/app_text_field.dart';
 
 final _log = Logger('authors_screen');
 

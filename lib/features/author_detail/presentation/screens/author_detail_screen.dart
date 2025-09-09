@@ -6,10 +6,10 @@ import 'package:realview/features/author_detail/domain/entity/author_detail.dart
 import 'package:realview/features/author_detail/presentation/blocs/author_detail_bloc/author_detail_bloc.dart';
 import 'package:realview/features/author_detail/presentation/widgets/author_attribute_widget.dart';
 import 'package:realview/features/author_detail/presentation/widgets/author_name_widget.dart';
-import 'package:realview/generic/strings.dart';
-import 'package:realview/generic/widgets/app_error_widget.dart';
-import 'package:realview/generic/widgets/app_progress.dart';
-import 'package:realview/generic/widgets/app_screen.dart';
+import 'package:realview/utils/strings.dart';
+import 'package:realview/common_widgets/app_error_widget.dart';
+import 'package:realview/common_widgets/app_progress.dart';
+import 'package:realview/common_widgets/app_screen.dart';
 
 class AuthorDetailScreen extends StatefulWidget {
   final String authorId;

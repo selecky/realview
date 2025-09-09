@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logging/logging.dart';
 import 'package:realview/features/home/presentation/blocs/home_bloc.dart';
 import 'package:realview/features/home/presentation/widgets/home_tile.dart';
-import 'package:realview/generic/strings.dart';
-import 'package:realview/generic/widgets/app_screen.dart';
+import 'package:realview/utils/strings.dart';
+import 'package:realview/common_widgets/app_screen.dart';
 
 final _log = Logger('home_screen');
 

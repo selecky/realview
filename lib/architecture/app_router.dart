@@ -61,4 +61,16 @@ class _AppNavigatorObserver extends NavigatorObserver {
       _log.info('${route.settings.name}_screen opened');
     }
   }
+
+  @override
+  Future<void> didPop(Route<dynamic> route, Route<dynamic>? previousRoute) async {
+
+    if (route.settings.name != null) {
+      _log.info('${route.settings.name}_screen closed');
+    }
+
+    if (previousRoute?.settings.name != null) {
+      _log.info('Returned to ${previousRoute?.settings.name}_screen');
+    }
+  }
 }
